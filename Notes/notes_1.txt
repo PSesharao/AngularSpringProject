@@ -1,0 +1,6 @@
+
+Angular is a framework for building modern single-page applications.
+
+Traditional application each user action results in a full HTML page load. So if you do any work in the browser it'll make a request at a server and give you a full page every time.
+
+However in a single-page application,a web application is composed of a single page and based on the user actions the application page is updated so it normally performs a partial update instead of a full page load. 
