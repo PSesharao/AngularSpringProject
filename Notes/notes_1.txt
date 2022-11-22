@@ -1,6 +1,77 @@
 
+Angular 
+---------
+
 Angular is a framework for building modern single-page applications.
 
 Traditional application each user action results in a full HTML page load. So if you do any work in the browser it'll make a request at a server and give you a full page every time.
 
 However in a single-page application,a web application is composed of a single page and based on the user actions the application page is updated so it normally performs a partial update instead of a full page load. 
+
+The first version of AngularJS 1.0 was released in October 2010 . 
+
+Angular team found ways that they could actually improve the framework and actually make it better and so in this case they actually did a total rewrite of the framework so they released Angular 2 in October 2016. 
+
+It's a total rewrite of the framework. It's a clean break from AngularJS 1.0. So it's actually two separate frameworks, two separate code bases and so it was a big transition there between the two. 
+
+So using Angular 2 in going forward then all of those newer versions they simply followed the same framework approach and they made incremental improvements so they released Angular 4, 5, 6, 7 and 8. 
+
+No major changes here just incremental improvements. But here the key is that AngularJS 1.0 and Angular 2 a total rewrite, two separate frameworks. 
+
+So whenever you see AngularJS that's basically legacy work. Current work is Angular 2 and higher. 
+
+
+TypeScript
+-----------------
+TypeScript provides static typing support to JavaScript . 
+
+TypeScript is a superset of JavaScript and ECMAScript , So you have the core JavaScript, plain vanilla . 
+
+TypeScript is a strongly-typed language with compile-time checking and IDE support.
+
+web browsers do not understand TypeScript natively, they can only understand JavaScript, so we somehow need to convert our TypeScript code over to JavaScript code. And this is known as transpiling. 
+
+tsc mydemo.ts --> will convert mydemo to mydemo.js
+
+to run the javascript file node mydemo.js 
+
+So we're using the new typescript 'let' keyword  for variable declarations, as opposed to the traditional JavaScript var keyword.The JavaScript var keyword had a number of gotchas and pitfalls, such as scoping issues, capturing, shadowing, and so on.
+
+tsc --init will generate a new tsconfig.json file , where we can configure the workspace ts files .
+
+Angular 
+-------------------
+Component  : It's the main player in an Angular application.A component has two parts: one, a view for the user interface and then two, the actual class that implements the application logic or event handling for the view.
+
+View template : the user interface for the component. It has static HTML along with some dynamic elements.
+
+Directive : Adds custom behavior to the HTML elements. You can use it for looping, conditionals, and so on .
+
+Service : A helper class that provides the desired functionality , so it can retrieve data from a server perform calculation or form validation, and so on. This service is actually code written in typescript it's part of the Angular project, it runs client-side but it can remotely connect to any external sources as needed. 
+
+Module : It is a collection of related components , directives, services, and so on.
+
+Project structure : 
+
+angular.json : this file basically has the Angular workspace configuration 
+ 
+e2e , karma.config.js  : This is for end to end testing. 
+
+node_modules : this is the local repository of the node modules.
+
+package.json : this has the project metadata , also a list of node dependencies. as being similar to Maven's pom.xml file
+basically a list of all your dependencies for your project.
+
+src : the main source directory 
+
+app : And then the app folder basically has your app components, templates and so on. 
+
+asset : The assets folder has any other web assets that you want to serve up. So for example, images and so on you can place here. 
+
+environments  : folder has configuration so for like dev environment,  test environment, prod environment,similar to profiles in the Spring world.
+
+index.html : this is your main launch page so this basically kind of bootstraps the entire process for your given application.
+
+polyfils.ts : adds support for different browser versions for like i.e. Chrome, Firefox, Safari.
+
+test.ts : basically has a collection of unit tests for the entire application
