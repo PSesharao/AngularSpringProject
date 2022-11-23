@@ -2,6 +2,7 @@ package com.org.ecommerce.entity;
 
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 
 import javax.persistence.*;
@@ -10,31 +11,46 @@ import java.util.Date;
 
 @Entity
 @Table(name = "product")
-@Data // this is from lombook for avoiding the boilerplate code
+@Data // this is from lombok for avoiding the boilerplate code
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id ;
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "category_id", nullable = false)
+    private ProductCategory category;
+
     @Column(name = "sku")
-    private  String sku ;
+    private String sku;
+
     @Column(name = "name")
-    private  String name ;
+    private String name;
+
     @Column(name = "description")
-    private  String description ;
+    private String description;
+
     @Column(name = "unit_price")
-    private BigDecimal unitPrice ;
+    private BigDecimal unitPrice;
+
     @Column(name = "image_url")
-    private String imageUrl ;
+    private String imageUrl;
+
     @Column(name = "active")
-    private boolean active ;
+    private boolean active;
+
     @Column(name = "units_in_stock")
-    private int unitsInStock ;
+    private int unitsInStock;
+
     @Column(name = "date_created")
     @CreationTimestamp
-    private Date dateCreated ;
+    private Date dateCreated;
+
     @Column(name = "last_updated")
-    @CreationTimestamp
-    private Date lastUpdated ;
+    @UpdateTimestamp
+    private Date lastUpdated;
 }
+
 
